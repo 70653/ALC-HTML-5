@@ -216,6 +216,7 @@ jeffBezos:1
     // functions
     function CheckAnswer()
     {
+        userAction = userAction.toLowerCase();
         if (userAction == "look")
         {
             Look();
@@ -241,11 +242,11 @@ jeffBezos:1
         {
             West();
         }
-        else if(userAction == "talk")
+        else if(userAction.toLowerCase().includes("talk"))
         {
             Talk();
         }
-        else if(userAction == "attack")
+        else if(userAction.toLowerCase().includes("attack"))
         {
           Attack();
         }
@@ -501,10 +502,9 @@ jeffBezos:1
     
     function Talk()
     {
-        userAction = prompt("Who would you like to talk to?");
       
       // Jarl Korstal
-      if (userAction == "jarl korstal" && xPosition == 1 && yPosition == 2)
+      if (userAction == "talk jarl korstal" && xPosition == 1 && yPosition == 2)
       {
           alert(jarlKorstal[dialogueOption.jarlKorstal]);
         if (dialogueOption.jarlKorstal == 1)
@@ -518,7 +518,7 @@ jeffBezos:1
       }
       
       // Belor
-      else if (userAction == "belor" && xPosition == 1 && yPosition == 2)
+      else if (userAction == "talk belor" && xPosition == 1 && yPosition == 2)
       {
           alert(belor[dialogueOption.belor]);
         if (dialogueOption.belor == 1 && dialogueOption.eimmir == 2)
@@ -530,13 +530,13 @@ jeffBezos:1
       }
       
       // guard
-      else if (userAction == "guard")
+      else if (userAction == "talk guard")
       {
           alert(guard[2]);
       }
       
       // Tall Blonde Man
-      else if (userAction == "tall blonde man" && tallBlondeManThere == true && xPosition == 5 && yPosition == 2)
+      else if (userAction == "talk tall blonde man" && tallBlondeManThere == true && xPosition == 5 && yPosition == 2)
       {
           alert(tallBlondeMan[dialogueOption.tallBlondeMan]);
         if (dialogueOption.tallBlondeMan == 1)
@@ -554,7 +554,7 @@ jeffBezos:1
       }
       
       // Jarl Balin
-      else if (userAction == "jarl balin" && xPosition == 4 && yPosition == 6)
+      else if (userAction == "talk jarl balin" && xPosition == 4 && yPosition == 6)
       {
           alert(jarlBalin[dialogueOption.jarlBalin]);
         if (dialogueOption.jarlBalin == 1 && dialogueOption.jarlKorstal == 2)
@@ -569,7 +569,7 @@ jeffBezos:1
       }
       
       // Estra
-      else if (userAction == "estra" && xPosition == 4 && yPosition == 6)
+      else if (userAction == "talk estra" && xPosition == 4 && yPosition == 6)
       {
           alert(estra[dialogueOption.estra]);
         if (dialogueOption.estra == 1)
@@ -584,7 +584,7 @@ jeffBezos:1
       }
       
       // Jarl Gervis
-      else if (userAction == "jarl gervis" && xPosition == 2 && yPosition == 6)
+      else if (userAction == "talk jarl gervis" && xPosition == 2 && yPosition == 6)
       {
           alert(jarlGervis[dialogueOption.jarlGervis]);
         if (dialogueOption.jarlGervis == 1 && dialogueOption.estra == 2)
@@ -596,7 +596,7 @@ jeffBezos:1
       }
       
       // Eimmir
-      else if (userAction == "eimmir" && xPosition == 2 && yPosition == 6)
+      else if (userAction == "talk eimmir" && xPosition == 2 && yPosition == 6)
       {
           alert(eimmir[dialogueOption.eimmir]);
         if (dialogueOption.eimmir == 1)
@@ -614,7 +614,7 @@ jeffBezos:1
       }
       
       // Little Boy
-      else if (userAction == "little boy" && xPosition == 8 && yPosition == 3 && littleBoyThere == true)
+      else if (userAction == "talk little boy" && xPosition == 8 && yPosition == 3 && littleBoyThere == true)
       {
           alert(littleBoy[dialogueOption.littleBoy]);
         if (dialogueOption.littleBoy == 1 && inventory.sword == 1)
@@ -627,7 +627,7 @@ jeffBezos:1
       }
       
       // Jeff Bezos
-      else if (userAction == "jeff bezos" && xPosition == 7 && yPosition == 6)
+      else if (userAction == "talk jeff bezos" && xPosition == 7 && yPosition == 6)
       {
           alert(jeffBezos[dialogueOption.jeffBezos]);
         if (dialogueOption.jeffBezos == 1 && dialogueOption.jarlGervis == 3)
@@ -651,55 +651,54 @@ jeffBezos:1
  
   function Attack()
     {
-        userAction = prompt("Who would you like to attack?");
       
       // Jarl Korstal
-      if (userAction == "jarl korstal" && xPosition == 1 && yPosition == 2)
+      if (userAction == "attack jarl korstal" && xPosition == 1 && yPosition == 2)
       {
           alert(jarlKorstal[4]);
       }      
       // Belor
-      else if (userAction == "belor" && xPosition == 1 && yPosition == 2)
+      else if (userAction == "attack belor" && xPosition == 1 && yPosition == 2)
       {
           alert(belor[4]);
       }      
       // guard
-      else if (userAction == "guard")
+      else if (userAction == "attack guard")
       {
           alert(guard[4]);
       }      
       // Tall Blonde Man
-      else if (userAction == "tall blonde man" && tallBlondeManThere == true && xPosition == 5 && yPosition == 1)
+      else if (userAction == "attack tall blonde man" && tallBlondeManThere == true && xPosition == 5 && yPosition == 1)
       {
           alert(tallBlondeMan[4]);
       }      
       // Jarl Balin
-      else if (userAction == "jarl balin" && xPosition == 4 && yPosition == 6)
+      else if (userAction == "attack jarl balin" && xPosition == 4 && yPosition == 6)
       {
                 alert(jarlBalin[4]);
       }      
       // Estra
-      else if (userAction == "estra" && xPosition == 4 && yPosition == 6)
+      else if (userAction == "attack estra" && xPosition == 4 && yPosition == 6)
       {
           alert(estra[4]);
       }      
       // Jarl Gervis
-      else if (userAction == "jarl gervis" && xPosition == 2 && yPosition == 6)
+      else if (userAction == "attack jarl gervis" && xPosition == 2 && yPosition == 6)
       {
           alert(jarlGervis[4]);
       }      
       // Eimmir
-      else if (userAction == "eimmir" && xPosition == 2 && yPosition == 6)
+      else if (userAction == "attack eimmir" && xPosition == 2 && yPosition == 6)
       {
           alert(eimmir[4]);
       }      
       // Little Boy
-      else if (userAction == "little boy" && xPosition == 8 && yPosition == 3 && littleBoyThere == true)
+      else if (userAction == "attack little boy" && xPosition == 8 && yPosition == 3 && littleBoyThere == true)
       {
           alert(littleBoy[4]);
       }
       // Jeff Bezos
-      else if (userAction == "jeff bezos" && xPosition == 7 && yPosition == 6)
+      else if (userAction == "attack jeff bezos" && xPosition == 7 && yPosition == 6)
       {
           alert(jeffBezos[4]);
       }      
@@ -732,14 +731,20 @@ jeffBezos:1
         switch(prompt("This is a switch statement, which switch would you like?  A Nintendo Switch or a Light Switch?  Enter 'Nintendo' or 'Light'").toLowerCase())
         {
             case "nintendo":
-                alert("Good choice, the game will start now.");
+                alert("Good choice, the game will start soon.");
                 break;
             case "light":
-                alert("Good choice, light is good, the game will start now.");
+                alert("Good choice, light is good, the game will start soon.");
                 break;
             default:
-                alert("I don't think that was 'Nintendo' or 'Light'.  But whatever, the game will start now.");
+                alert("I don't think that was 'Nintendo' or 'Light'.  But whatever, the game will start soon.");
         }
+        var dumbInput;
+        while(dumbInput != "exit loop")
+        {
+            dumbInput = prompt("This is a while loop, in order to exit the loop enter 'exit loop'.  Until then you will keep seeing this message.");
+        }
+        alert("The game will start now.");
     }
 
     
