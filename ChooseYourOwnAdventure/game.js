@@ -759,7 +759,10 @@ jeffBezos:1
 
 
 // start of the whole program to call the Game function
-Game();
+if (confirm("Do you want to play this game?"))
+{
+    Game();
+}
 
 
 
