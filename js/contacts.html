@@ -2,6 +2,8 @@
 <html lang="en">
     <head>
         
+        <!-- -->
+        
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -19,11 +21,16 @@
             <h1 class="center-align">
             My Contacts</h1>
             
+            
+            <!-- this creates a place to put your input -->
             <input type="text" id="filterInput" placeholder="Search names...">
             
-            <ul id="names" class="collection with-header">
+            
+            <!-- ul id initiated.  All items underneath will have the ul id "names"-->
+            
+            <ul id="names" class="collection with-header"> 
                 
-                
+                <!-- li stands for List Item.  All of these list items will have the class name "collection-item" -->
                 <li class="collection-header">
                     <h5>A</h5>
                 </li>
@@ -86,33 +93,66 @@
             
         </div>
         
-        <!--<script>
+        <script>
+            
             // Get input element
             let filterInput = document.getElementById('filterInput');
+            
+            
+            
             // Add event listener
             filterInput.addEventListener('keyup', filterNames);
-            function filterNames(){
-            // Get value of input
-            let filterValue = document.getElementById('filterInput').value.toUpperCase();
-            // Get names ul
-            let ul = document.getElementById('names');
-            // Get lis from ul
-            let li = ul.querySelectorAll('li.collection-item');
-            // Loop through collection-item lis
-            for(let i = 0;i < li.length;i++)
-            {
-                let a = li[i].getElementsByTagName('a')[0];
-                // If matched
-                if(a.innerHTML.toUpperCase().indexOf(filterValue) > -1)
+            
+            function filterNames()
+            {   
+                // Get value of input
+                let filterValue = document.getElementById('filterInput').value.toUpperCase();
+                
+                // Get names ul
+                //This references the html id up above
+                let ul = document.getElementById('names');
+                
+                // Get li from ul
+                //This references the list items INSIDE the ul "names".  This is up above.
+                let li = ul.querySelectorAll('li.collection-item');
+                
+                
+                // selects all the headers like 'A' 'B' etc
+                let nameHeaders = ul.querySelectorAll('li.collection-header');
+                
+                for(let i = 0; i < nameHeaders.length; i++)
                 {
-                    li[i].style.display = '';
-                } 
-                else 
-                {
-                    li[i].style.display = 'none';
+                    let b = nameHeaders[i].getElementsByTagName('b')[0];
+                    if(filterInput == null)
+                    {
+                        nameHeaders[i].style.display = 'none';
+                    }
+                    else
+                    {
+                        nameHeaders[i].style.display = '';
+                    }
                 }
-            }
-      </script>-->
+                
+                // Loop through collection-item lis
+                for(let i = 0; i < li.length; i++)
+                {
+                    // creates an array of the list items and compares it 1 letter at a time to your search
+                    let a = li[i].getElementsByTagName('a')[0];
+                    
+                    // If matched
+                    if(a.innerHTML.toUpperCase().indexOf(filterValue) > -1)
+                    {
+                        li[i].style.display = '';
+                    } 
+                    else 
+                    {
+                        li[i].style.display = 'none';
+                    }
+                }
+                
+            }// end filterNames
+                
+      </script>
 
         
     </body>
