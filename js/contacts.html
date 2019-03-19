@@ -105,6 +105,7 @@
             
             function filterNames()
             {   
+                
                 // Get value of input
                 let filterValue = document.getElementById('filterInput').value.toUpperCase();
                 
@@ -115,23 +116,6 @@
                 // Get li from ul
                 //This references the list items INSIDE the ul "names".  This is up above.
                 let li = ul.querySelectorAll('li.collection-item');
-                
-                
-                // selects all the headers like 'A' 'B' etc
-                let nameHeaders = ul.querySelectorAll('li.collection-header');
-                
-                for(let i = 0; i < nameHeaders.length; i++)
-                {
-                    let b = nameHeaders[i].getElementsByTagName('b')[0];
-                    if(filterInput == null)
-                    {
-                        nameHeaders[i].style.display = 'none';
-                    }
-                    else
-                    {
-                        nameHeaders[i].style.display = '';
-                    }
-                }
                 
                 // Loop through collection-item lis
                 for(let i = 0; i < li.length; i++)
@@ -148,6 +132,7 @@
                     {
                         li[i].style.display = 'none';
                     }
+                    
                 }
                 
             }// end filterNames
