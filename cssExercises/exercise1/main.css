@@ -1,3 +1,5 @@
+/* this is how you add comments*/
+
 body
 {
     background-color:darkmagenta;
@@ -5,6 +7,8 @@ body
     margin-left: 75px;
     margin-right: 75;
     margin-bottom: 75;
+    background-image: url("MIT-Earth-Dish_0.jpg");
+    background-repeat: no-repeat;
 }
 
 h1
@@ -26,7 +30,7 @@ h2
 
 h3
 {
-    
+
 }
 
 div#box
@@ -40,10 +44,90 @@ div#box
     transition: 1s;
 }
 
-
 div#box:hover
 {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     border-radius:100%;
+}
+
+div#triangle
+{
+    left: 100px;
+    top: 520px;
+    border-top: 50px solid orange;
+    border-left: 50px solid red;
+    border-right: 50px solid white;
+    border-bottom: 50px solid blue;
+    width: 0px;
+    height: 0px;
+    transform: rotate(30deg);
+}
+
+/* this is how you animate something */
+@keyframes moveBox
+{
+    0%
+    {
+        background-color: darksalmon;
+        left: 100px;
+        top: 600px;
+        transform: rotate(0deg);
+    }
+    20%
+    {
+        background-color: darksalmon;
+        left: 100px;
+        top: 600px;
+        transform: rotate(0deg);
+    }
+    40%
+    {
+        background-color: chartreuse;
+        left: 200px;
+        top: 650px;
+        transform: rotate(65deg);
+    }
+    60%
+    {
+        background-color: darkgoldenrod;
+        left: 400px;
+        top: 600px;
+        transform: rotate(110deg);
+    }
+    80%
+    {
+        background-color: darkgreen;
+        left: 550px;
+        top: 700px;
+        transform: rotate(-270deg);
+    }
+    100%
+    {
+        background-color: darksalmon;
+        left: 100;
+        top: 600px;
+        transform: rotate(0);
+    }
+}
+
+div#movingBox
+{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: darksalmon;
+    left: 100px;
+    top: 600px;
+    animation-name: moveBox;
+    animation-duration: 7s;
+}
+
+img#spacePicture
+{
+    position: absolute; /* this lets the position of this object override headers and stuff*/
+    display: block;
+    left: 500px;
+    top: 50px;
+    border: outset 5px red;
 }
