@@ -19,7 +19,8 @@ div#container /* the # references the id.  Which is container */
 {
     width:100%;
     border:3px dotted forestgreen;
-    background-color:fuchsia;
+    
+    /*background-color:fuchsia;*/
 }
 
 header
