@@ -42,6 +42,15 @@ header img
 header h1 /* only styles the h1 within a header */
 {
     color:firebrick;
+    text-decoration: none;
+    font-family: 'Tahoma',monospace;
+    font-size: 40px;
+}
+
+header#head a
+{
+    color:firebrick;
+    text-decoration: none;
     font-family: 'Tahoma',monospace;
     font-size: 40px;
 }
@@ -60,7 +69,7 @@ h3
 }
 
 .icon-bar {
-  position:absolute;
+  position: fixed;
   bottom:0;
   width: 100%;
   background-color: #555;
@@ -149,9 +158,53 @@ div.keepOpen
 nav ul li img#neboLogo
 {
     /* width = height * 1.366 */
+    float: none;
     max-height: 40px;
     height: auto;
     width: auto;
     margin: auto;
     vertical-align: middle;
+}
+
+div#productContent
+{
+    width:100%;
+}
+
+div#product_grp
+{
+    width: auto;
+    margin: auto;
+}
+
+figure.product
+{
+    float:left;
+    width: 20%;
+    background-color: coral;
+}
+
+figure.product img
+{
+    display: block;
+    width: 90%;
+    margin:auto;
+    margin-top: 15px;
+}
+
+figure.product figcaption
+{
+    text-align:center;
+    color:black;
+}
+
+div#homeContent
+{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 30px;
+}
+div#homeContent p
+{
+    font-family: 'Slabo 27px', serif;
 }
